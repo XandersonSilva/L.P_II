@@ -13,14 +13,14 @@ h2{
 main{
     background-color: white;
     padding: 2%;
-    width: 340px;
+    width: 340px; /* Largura para celulares */
     margin: auto;
 }
 
 .perfil{
   display: none;
 }
-@media screen and (min-width:610px) {
+@media screen and (min-width:620px) {
   .perfil{
     display: flex;
     margin-left: auto;
@@ -28,12 +28,12 @@ main{
     }
     
     header{
-      width: 600px;
+      width: 615px;
       margin: auto;
     }
   
     main{
-      width: 550px;
+      width: 560px;
       
     }
     
