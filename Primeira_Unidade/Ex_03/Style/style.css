@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+#senha, #email{
+    height: 25px;
+    width: 275px;
+}
+#enviar{
+    width: 284px;
+    margin-top: 20px;
+    height: 33px;
+    background-color: #E67319;
+    border: none;
+}
+label{
+    color: #FE5E1C;
+}
+body{
+    background-color: rgb(13, 22, 20);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main{
+    width: 320px;
+    background-color: #000000;
+    border: solid #E67319 1px;
+    border-radius: 6px;
+
+}
+hr{
+    border-color: #e672196c;
+}
+form hr{
+    border-color: #e672196c;
+    border-radius: 30%;
+}
+form h1{
+  color: #FE5E1C;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 32px;
+  margin-bottom: 2px;
+  
+}
+#L-form{
+    width: 278px;
+    background-color: #000000;
+    margin: auto;
+    padding-bottom: 40px;    
+}
+a{
+    color: #aa7d00ce;
+    
+}
+
+footer{
+    text-align: center;
+    color: #ffd642;
+}
+#E-campo, #S-campo{
+    margin: auto;
+}
