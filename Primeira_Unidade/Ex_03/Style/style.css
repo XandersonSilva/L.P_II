@@ -11,11 +11,11 @@
     width: 278px;
     margin-top: 20px;
     height: 33px;
-    background-color: #E67319;
+    background-color: #3A9FFC;
     border: none;
 }
 #Cadastrar-se{
-    background-color: #6064496e;
+    background-color: #49645e6e;
     padding-top: 5px;
     padding-bottom: 5px;
     display: flex;
@@ -23,13 +23,13 @@
     align-items: center;
 }
 #Cadastrar-se label{
-    color: #ff9100;
+    color: #d2ddff;
 }
 
 #Cdt{
     font-size: 14px;
-    color: #000000;
-    background-color: #FE5E1C;
+    color: #f8ffff;
+    background-color: #3868F2;
     border-radius: 5px;
     margin-left: 25px;
     border: none;
@@ -37,10 +37,10 @@
 }
 
 label{
-    color: #FE5E1C;
+    color: #3AFCF3;
 }
 body{
-    background-color: rgb(13, 22, 20);
+    background-color: rgb(10, 10, 10);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -49,15 +49,13 @@ body{
 main{
     width: 320px;
     background-color: #000000;
-    border: solid #E67319 1px;
+    border: solid #3A9FFC 1px;
     border-radius: 6px;
 
 }
-hr{
-    border-color: #e672196c;
-}
+
 form hr{
-    border-color: #e672196c;
+    border-color: #3a9efc71;
     border-radius: 30%;
 }
 
@@ -65,8 +63,8 @@ form hr{
     display: flex;
     margin-top: 5px;
 }
-form h1{
-  color: #FE5E1C;
+h1{
+  color: #40C2E5;
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 32px;
@@ -75,12 +73,12 @@ form h1{
 }
 #L-form{
     width: 278px;
-    background-color: #000000;
+    background-color: #00000011;
     margin: auto;
     padding-bottom: 15px;    
 }
 a{
-    color: #ff9d42cb;
+    color: #3868F2;
     
 }
 
@@ -90,11 +88,11 @@ footer{
     background-color: #000000;
     bottom: 0px;
     text-align: center;
-    color: #fc8f2a;
+    color: #ffffff;
 }
 footer hr {
-    border: solid #ff5100 1px;
-    background-color: #ff7300;
+    border: solid #3868F2 1px;
+    background-color: #3868F2;
     margin: 0;
 }
 
