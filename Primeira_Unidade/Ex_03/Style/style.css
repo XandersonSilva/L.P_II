@@ -2,15 +2,40 @@
 
 #senha, #email{
     height: 25px;
-    width: 275px;
+    width: 270px;
 }
 #enviar{
-    width: 284px;
+    font-size: 18px;
+    color: #000000;
+    border-radius: 3px;
+    width: 278px;
     margin-top: 20px;
     height: 33px;
     background-color: #E67319;
     border: none;
 }
+#Cadastrar-se{
+    background-color: #6064496e;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Cadastrar-se label{
+    color: #ff9100;
+}
+
+#Cdt{
+    font-size: 14px;
+    color: #000000;
+    background-color: #FE5E1C;
+    border-radius: 5px;
+    margin-left: 25px;
+    border: none;
+    padding: 7px 3px;
+}
+
 label{
     color: #FE5E1C;
 }
@@ -35,6 +60,11 @@ form hr{
     border-color: #e672196c;
     border-radius: 30%;
 }
+
+#Mt_log{
+    display: flex;
+    margin-top: 5px;
+}
 form h1{
   color: #FE5E1C;
   text-align: center;
@@ -47,17 +77,27 @@ form h1{
     width: 278px;
     background-color: #000000;
     margin: auto;
-    padding-bottom: 40px;    
+    padding-bottom: 15px;    
 }
 a{
-    color: #aa7d00ce;
+    color: #ff9d42cb;
     
 }
 
 footer{
+    width: 100%;
+    position: fixed;
+    background-color: #000000;
+    bottom: 0px;
     text-align: center;
-    color: #ffd642;
+    color: #fc8f2a;
 }
+footer hr {
+    border: solid #ff5100 1px;
+    background-color: #ff7300;
+    margin: 0;
+}
+
 #E-campo, #S-campo{
     margin: auto;
 }
