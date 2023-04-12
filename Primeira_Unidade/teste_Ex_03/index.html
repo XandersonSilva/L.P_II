@@ -17,25 +17,22 @@
         <main>
             <form action="pagina2.html" autocomplete="on" method="post">
                 <p>
-                    <label for="I_nome"> Usuario </label> 
-                    <input type="text" name="I_nome" id="Nome" required minlength="4" maxlength="16" size="15" placeholder="Exemplo_123" autocomplete="username"></p>
+                    <label for="Nome"> Usuario </label> 
+                    <input type="text" name="I_nome" id="Nome" required minlength="4" maxlength="16" size="15" placeholder="Exemplo" autocomplete="username" onblur="campoVazio()"></p>
                 <p>
-                <p>
+                <p>digitado
                     <label for="L_senha">Senha</label>
-                    <input type="password" name="Senha" id="L_senha" required minlength="8" maxlength="28" size="15">
+                    <input type="password" name="Senha" id="L_senha" required minlength="8" maxlength="28" size="15" placeholder="12345678">
 
                 </p>
                 <input type="submit" value="Enviar">
+                <input onclick="M_nome()" type="button" value="Tete">
             </form>
-            <p>O usuario informado é </p>
+            <p id="D_dij" >O usuario informado é </p>
 
         </main>
         <a href="" target=""></a>
     </section>
-    <script>
-        function Mostra_nome{
-            
-        }
-    </script>
+    <script src="Scripts/script.js"></script>
 </body>
 </html>
