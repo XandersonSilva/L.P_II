@@ -1,59 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fazer login</title>
-    <link rel="stylesheet" href="Style/style.css">
-    <link rel="shortcut icon" href="favicon/globo.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="Style/style_cadastro.css">
+  <link rel="shortcut icon" href="favicon/Icons8-Windows-8-Security-Password-1.16.png" type="image/png">
 </head>
 <body>
-    <main>
-        <header>
-            
-        </header>
-        <section>
-            <article id="L-form">
-                <form action="" method="post" id="forms">
-                    <article>
-                        <h1>Login</h1>
-                        <hr>
-                    </article>
-                    <article>
-                        <label for="email">Email</label> 
-                        <input type="email" name="Email" id="email" placeholder="Email@exemplo.com" required size="30">
-                    </article>
-                    <br>
-                    <article>
-                        <label for="senha">Senha</label> 
-                        <input type="password" name="Senha" id="senha" placeholder="12345678" required >
-                    </article>
-                    <article id="Mt_log">
-                        <input type="checkbox" name="m_log" id="M_log">
-                        <label for="M_log"><small>Manter me logado</small></label>
-                    </article>
-                    <article>
-                      <input type="submit" value="Entrar" id="enviar">
-                    </article>
-                </form>
-            </article>
-            <article id="Cadastrar-se">
-                <label for="Cdt"><strong>Não possui uma conta?</strong></label>
-                <a href="cadastro.html">
-                    <input type="button" value="Cadastrar-se" id="Cdt">
-                </a>
-             </article>
-        </section>
-    </main>
-    <footer>
-        <hr>
-        <small>
-            &reg; Todos os direitos reservados 
-        </br>
-            Contato: <a href="https://github.com/xandersonsilva" target="_blank">GitHub </a> - <a href="https://www.instagram.com/x.s.s____/" target = "_blank">Instagram</a> 
-        </small>
-    </footer>
+
+  <main>
+    <h1>Cadastro 1<sup>o</sup> etapa</h1>
+    <form action="" method="dialog" >
+      <!-- 
+        Utilizei o método dillog por conta que ainda não tenho
+        conhecimentos para fazer um código php para verificar os 
+        dados etão não poderia utilizar o método post ou get. Dentro 
+        dos testes que realizei para o redirecionamento para a tela 
+        de login apenas o método dialog possibilitou voltar para a 
+        tela de login, todavia não sei como irá sua interação com os 
+        diversos navegadores e suas versões diferentes, então se o 
+        uso do mesmo causou erros dentro do uso do seu navegador 
+        peço desculpas pela minha falha.
+      -->
+      <p>
+        <label for="nome" action="cadastro.html" >Nome: </label>
+        <input type="text" name="nome" id="nome" required
+        onblur="semNome()" minlength="3" maxlength="30" >
+        <span id="erroNome" class="erro"></span>
+      </p>
+      <p>
+        <label for="E-mail">E-mail</label>
+        <input type="email" name="email" required id="E-mail" onblur="semEmail()" placeholder="Email@exemplo.com" >
+        <span id="erroEmail" class="erro"></span>
+      </p>
+      <p>
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha"maxlength="12" minlength="4" required onblur="semSenha()" >
+        <span id="erroSenha" class="erro"></span>
+      </p>
+      <p>
+        <label for="senhaIgual">Confirme a senha: </label>
+        <input type="password" name="senhaIgual" id="senhaIgual" maxlength="12" minlength="4" required onblur="naoConf()" >
+        <span id="erroSenhaRepetida" class="erro"></span>
+      </p>
+      <p>
+        <label for="nascimento">Nascimento: </label>
+        <input type="date" name="nascimento" id="nascimento" onblur="validaIdade()" required>
+        <span id="erroIdade" class="erro"></span>
+      </p>
     
+      <input type="submit" value="Cadastrar-se"  id="botaoCadastrar" onclick="avancar()" >
+    </form>
+  </main>
+
+  <script src="Scripts/Cadastro_P.js"></script>
 </body>
 </html>

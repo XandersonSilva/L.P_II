@@ -1,13 +1,10 @@
 @charset "UTF-8";
 
-#nascimento, #nome, #E-mail, #senhaIgual, #senha{
+#senha, #email{
     height: 25px;
     width: 270px;
 }
-sup{
-    font-size: 16px;
-}
-#botaoCadastrar{
+#enviar{
     font-size: 18px;
     color: #000000;
     border-radius: 3px;
@@ -17,12 +14,29 @@ sup{
     background-color: #3A9FFC;
     border: none;
 }
-
-p{
-    color: white;
+#Cadastrar-se{
+    background-color: #49645e6e;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Cadastrar-se label{
+    color: #d2ddff;
 }
 
-label, legend{
+#Cdt{
+    font-size: 14px;
+    color: #f8ffff;
+    background-color: #3868F2;
+    border-radius: 5px;
+    margin-left: 25px;
+    border: none;
+    padding: 7px 3px;
+}
+
+label{
     color: #3AFCF3;
 }
 body{
@@ -40,7 +54,7 @@ main{
 
 }
 
- hr{
+form hr{
     border-color: #3a9efc71;
     border-radius: 30%;
 }
@@ -48,7 +62,6 @@ main{
 #Mt_log{
     display: flex;
     margin-top: 5px;
-    margin-bottom: 5px;
 }
 h1{
   color: #40C2E5;
@@ -64,19 +77,25 @@ form{
     margin: auto;
     padding-bottom: 15px;    
 }
-span{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-top: 2px;
-    display: flex;
-    color: #ff0606;
-    justify-content: center;
-    background-color: #0077ff1e;
-}
 a{
     color: #3868F2;
     
 }
 
-label, input{
+footer{
+    width: 100%;
+    position: fixed;
+    background-color: #000000;
+    bottom: 0px;
+    text-align: center;
+    color: #ffffff;
+}
+footer hr {
+    border: solid #3868F2 1px;
+    background-color: #3868F2;
+    margin: 0;
+}
+
+#E-campo, #S-campo{
     margin: auto;
 }
