@@ -1,0 +1,32 @@
+.titulo {
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.numero-invalido {
+    background-color: orange;
+    color: white;
+}
+
+.mensagem-erro {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    
+}
+    
+.fadeOut {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.procura {
+    margin-bottom: 19px;
+    width: 300px;
+}
+
+.invisivel {
+    display: none;
+}

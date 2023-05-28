@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/playground.css">
+    <title>Automation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron titulo">
+            <h1 class="">Tabela Automation Solutions</h1>
+            <h3>Tabela de teste Security</h3>
+            <ul id="mensagem-erro" class="lucas"></ul>
+        </div>
+
+        <div class="input-group procura">
+            <span class="input-group-addon" id="basic-addon1">Procura 1 Num</span>
+            <input name="filtro" type="text" class="form-control filtro" placeholder="Filtre pelo primeiro num" aria-describedby="basic-addon1">
+        </div>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Numero 1</th>
+                    <th>Numero 2</th>
+                    <th>Total Soma</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-pacientes">
+                <tr class="numero">
+                    <td class="primeiro">10</td>
+                    <td class="segundo">3.76543</td>
+                    <td class="resultado"></td>
+                </tr>
+                <tr class="numero">
+                    <td class="primeiro">10</td>
+                    <td class="segundo">4</td>
+                    <td class="resultado"></td>
+                </tr>
+                <tr class="numero">
+                    <td class="primeiro">10</td>
+                    <td class="segundo">10</td>
+                    <td class="resultado"></td>
+                </tr>
+                <tr class="numero">
+                    <td class="primeiro">9</td>
+                    <td class="segundo">19</td>
+                    <td class="resultado"></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    
+    <section class="container">
+        <h2>Insira os numeros para Somar</h2>
+        <form class="form-inline" id="formulario">
+            <div class="form-group">
+                <label for="primeiroNumero">Numero 1</label>
+                <input type="text" id="primeiroNumero" placeholder="Ex: 3" name='primeiro'>
+            </div>
+            <div class="form-group">
+                <label for="segundoNumero">Numero 2</label>
+                <input type="text" id="segundoNumero" placeholder="Ex: 2" name='segundo'>
+            </div>
+            <button type="submit" class="btn btn-default" id="botao">Calcular</button>
+        </form>
+    </section>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/playground.js"></script>
+    <script src="js/playform.js"></script>
+    <script src="js/play-filtra.js"></script>
+    
+</body>
+</html>
