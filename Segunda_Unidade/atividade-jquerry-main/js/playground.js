@@ -72,10 +72,3 @@ function validaNum2 (num2) {
     }
 }
 
-
-
-
-
-
-
-

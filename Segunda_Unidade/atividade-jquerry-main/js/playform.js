@@ -1,4 +1,6 @@
-
+function excluirLinha(botao) {
+    $(botao).closest("tr").remove();
+}
 
 //lendo o botão do HTML
 var botao = document.querySelector("#botao");
@@ -17,8 +19,6 @@ botao.addEventListener('click', function(event){
     
     if (erros.length > 0) {
         exibeErro(erros);
-        
-        return;
     }
     var ul = document.querySelector('#mensagem-erro');
     ul.innerHTML = "";
@@ -36,6 +36,7 @@ botao.addEventListener('click', function(event){
     });
 
     function obtemNumerosForm(formulario) {
+
         var dados = {
             num1: formulario.primeiro.value,
             num2: formulario.segundo.value,
@@ -53,6 +54,9 @@ botao.addEventListener('click', function(event){
         elementoTr.appendChild(criaTd(dados.num1,"primeiro"));
         elementoTr.appendChild(criaTd(dados.num2,"segundo"));
         elementoTr.appendChild(criaTd(dados.soma,"resultado"));
+        var botao = $("<td>").append('<input type="button" value="Excluir" class="Bexcluir" onclick="excluirLinha(this)"> ');
+        $(elementoTr).append(botao)
+        
 
         return elementoTr;
        

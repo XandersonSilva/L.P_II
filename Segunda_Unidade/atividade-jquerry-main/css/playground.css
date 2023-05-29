@@ -30,3 +30,10 @@
 .invisivel {
     display: none;
 }
+
+.Bexcluir{
+    border-radius: 5px;
+    border-color: brown;
+    background-color: rgb(167, 0, 0);
+    color: white;
+}
