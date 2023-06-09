@@ -25,7 +25,7 @@
                 }
             }
             if ($Itens_Comprados[0] == 0 and $Itens_Comprados[1] == 0 and $Itens_Comprados[2] == 0){
-                echo '<p> Você não achou algo que lhe agrade? <br> Se trocar de ideia, visite a nossa <a href="../Paginas/formulario.php"><strong>página de produtos!</strong></a></p>';
+                echo '<p> Você não achou algo que lhe agrade? <br> Se trocar de ideia, visite a nossa <a href="../Paginas_PHP/formulario.php"><strong>página de produtos!</strong></a></p>';
             }
         }
 
