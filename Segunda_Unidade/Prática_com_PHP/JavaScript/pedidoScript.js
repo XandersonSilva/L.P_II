@@ -11,5 +11,5 @@ function mostrar(){
 }
 
 function princPag(){
-    window.location.href = "../Paginas/formulario.php";
+    window.location.href = "../Paginas_PHP/formulario.php";
 }
