@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../Style/style.css">
     <link rel="stylesheet" href="../Style/SPedido.css">
     <script src="../JavaScript/jquery.js"></script>
-    <link rel="shortcut icon" href="../Favicon/logo.jpg" type="image/jpeg">
+    <link rel="shortcut icon" href="../Imagens/Favicon/logo.jpg" type="image/jpeg">
     <title>Comfirmação</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
                 }
             }
             if ($Itens_Comprados[0] == 0 and $Itens_Comprados[1] == 0 and $Itens_Comprados[2] == 0){
-                echo '<p> Você não achou algo que lhe agrade? <br> Se trocar de ideia, visite a nossa <a href="../Paginas_PHP/formulario.php"><strong>página de produtos!</strong></a></p>';
+                echo '<p> Você não achou algo que lhe agrade? <br> Se trocar de ideia, visite a nossa <a href="../Paginas_PHP/index.php"><strong>página de produtos!</strong></a></p>';
             }
         }
 
@@ -62,10 +62,11 @@
     ?>
 
     <header id="itens">
-        <img src="../Logotipo/logo_150x80.jpg" id="logotipo" onclick="princPag()" alt="">
+        <img src="../Imagens/Logotipo/logo_150x80.jpg" id="logotipo" onclick="princPag()" alt="">
         <article >
             <h1>Finalizar Compra</h1>
         </article>
+        login
     </header>
     <main>
         <article id="itens">
@@ -164,20 +165,22 @@
         
         
         
-        </section>
-
-    <article> <!-- Tabela com dados dos produtos --> 
-        <aside id="prec_indv_ttl">
-            <?php
-                if ($valorTotal >=1){
-                    echo <<<TITULO
+        </section>  
+    
+    </main>
+    
+    <article id="prec_indv_ttl">
+        <?php
+            if ($valorTotal >=1){
+                echo <<<TITULO
+                <aside>
                     Mostrar preço por unidade 
                     <input id="btnMostra" type="button" class="botao" value="Mostrar" onclick="mostrar()" >
-                    TITULO;
-                }
-            ?>
-        </aside>
-        <aside id="prec_indv">        
+                </aside>
+                TITULO;
+            }
+        ?>
+        <aside id="prec_indv"> <!-- Tabela com dados dos produtos -->    
             <?php
                 if ($valorTotal >=1){
                     echo <<<TABELA
@@ -228,9 +231,7 @@
             
         </aside>
     </article>
-        
-        
-    </main>
+
     <script src="../JavaScript/pedidoScript.js"></script>
 </body>
 </html>

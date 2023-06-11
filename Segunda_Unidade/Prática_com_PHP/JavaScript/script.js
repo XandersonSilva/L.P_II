@@ -36,3 +36,7 @@ function Ant(){
 
     Mostra_item(VisAtu);
 }
+
+function  logar(){
+    window.location.href = "../Cadastro_Login/login.html";
+}

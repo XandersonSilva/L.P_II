@@ -7,15 +7,19 @@
     <title>Teste form php</title>
     <link rel="stylesheet" href="../Style/style.css">
     <script src="../JavaScript/jquery.js"></script>
-    <link rel="shortcut icon" href="../Favicon/logo.jpg" type="image/jpeg">
+    <link rel="shortcut icon" href="../Imagens/Favicon/logo.jpg" type="image/jpeg">
 </head>
     <body>
 
         <header>
-            <img src="../Logotipo/logo_150x80.jpg" id="logotipo" alt="">
+            <img src="../Imagens/Logotipo/logo_150x80.jpg" id="logotipo" alt="">
             <article>
                 <h1>Materiais esportivos</h1>
             </article>
+            <nav id="entrar" onclick="logar()">
+                <p>Login</p>
+                <img id="login" src="../Imagens/Icones/conecte-se.png" alt="Log in">
+            </nav>
         </header>
 
         <main>
@@ -34,14 +38,14 @@
                         </div>
                             <aside class="Cont_Bola">
                                 <h2>Bola de Volei</h2>
-                                <img src="../Produtos/Bola_volei.png" alt="Bola de volei">
+                                <img src="../Imagens/Produtos/Bola_volei.png" alt="Bola de volei">
                                 
                                 <div class="Entrada">    
                                     <label for="quant_Bv">Quantidade</label>
                                     <input type="text" name="BvQtd" id="quant_Bv">
                                 </div>
                             </aside>
-                        <div>    
+                        <div>                            
                             <input class="botao_Nav" type="button" value=">" onclick="Prox()">
                         </div>
                     </article>
@@ -53,7 +57,7 @@
 
                         <aside class="Cont_Bola">
                             <h2>Bola de Futebol</h2>
-                            <img src="../Produtos/B_Futebol.png" alt="Bola de futebol">
+                            <img src="../Imagens/Produtos/B_Futebol.png" alt="Bola de futebol">
                             
                             <div class="Entrada">
                                 <label for="quant_Bf">Quantidade</label>
@@ -74,7 +78,7 @@
 
                         <aside class="Cont_Bola">
                             <h2>Bola de Handebol</h2>
-                            <img src="../Produtos/B_Handbal.png" alt="Bola de handball">
+                            <img src="../Imagens/Produtos/B_Handbal.png" alt="Bola de handball">
                             
                             <div class="Entrada">
                                 <label for="quant_Bh">Quantidade</label>
