@@ -1,4 +1,4 @@
-validacao = [0,0,0,0,0,0];
+var validacao = [0,0,0,0,0,0,0,0];
 
 
 
@@ -7,16 +7,79 @@ function desabilitaBotaoCadastrar(value) {
      var botaoCadastrar = document.getElementById("botaoCadastrar");
     if(value === true) {
         botaoCadastrar.setAttribute('disabled', 'true');
-  } else {
+        $("#botaoCadastrar").removeClass('ativado');
+        $("#botaoCadastrar").addClass('desativado');
+
+    } else {
+        $("#botaoCadastrar").addClass('ativado');
         botaoCadastrar.removeAttribute("disabled");
+        $("#botaoCadastrar").removeClass('desativado');
     }
 }
 
 
 
 // Inicialmente o botão de cadastro estará desabilitado
-desabilitaBotaoCadastrar(true)
+desabilitaBotaoCadastrar(true);
 
+
+function validaC() {
+    var cpf = document.getElementById("cpf").value;
+    var cpfValido = 0;
+
+    cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
+        cpfValido = -1;
+    }
+
+    let soma = 0;
+    let resto;
+
+    for (let i = 1; i <= 9; i++) {
+        soma += parseInt(cpf.charAt(i - 1)) * (11 - i);
+    }
+
+    resto = (soma * 10) % 11;
+
+    if (resto === 10 || resto === 11) {
+        resto = 0;
+    }
+
+    if (resto !== parseInt(cpf.charAt(9))) {
+        cpfValido = -1;
+    }
+
+    soma = 0;
+
+    for (let i = 0; i <= 9; i++) {
+        soma += parseInt(cpf.charAt(i)) * (11 - i);
+    }
+
+    resto = (soma * 10) % 11;
+
+    if (resto === 10 || resto === 11) {
+        resto = 0;
+    }
+
+    if (resto !== parseInt(cpf.charAt(10))) {
+        cpfValido = -1;
+    }
+
+
+    if (cpfValido == 0){
+        document.getElementById("erroCPF").innerHTML="";
+        validacao[6] = 1;
+        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5] + validacao[6] + validacao[7];
+    
+        if (frc == 8){
+            desabilitaBotaoCadastrar(false);
+            
+        }
+    }else{
+        document.getElementById("erroCPF").innerHTML="Para prosseguir informe um CPF válido";
+    }
+}
 
 
 function validaIdade() {
@@ -30,8 +93,8 @@ function validaIdade() {
     if(dataAtual >= dataAniversario18) {
       erroIdade.textContent = " "
       validacao[0] = 1;
-        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5];
-        if (frc == 6){
+        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5] + validacao[6] + validacao[7];
+        if (frc == 8){
             desabilitaBotaoCadastrar(false);
         }
     } else {
@@ -51,8 +114,8 @@ function verifica(){
         validacao[1] = 1;
         validacao[5] = 1;
         validacao[4] = 1;
-        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5];
-        if (frc == 6){
+        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5] + validacao[6] + validacao[7];
+        if (frc == 8){
             desabilitaBotaoCadastrar(false);
         }      
     }
@@ -68,14 +131,28 @@ function semNome(){
     }else{
         document.getElementById("erroNome").innerHTML="";
         validacao[2] = 1;
-        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5];
-        if (frc == 6){
+        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5] + validacao[6] + validacao[7];
+        if (frc == 8){
             desabilitaBotaoCadastrar(false);
             
         }
     }
 }
 
+function semEndereco(){
+    var endereco = document.getElementById("endereco");
+    if(endereco.value == ""){
+        document.getElementById("erroEndereco").innerHTML="Para prosseguir informe seu endereço!!!";
+    }else{
+        document.getElementById("erroEndereco").innerHTML="";
+        validacao[7] = 1;
+        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5] + validacao[6] + validacao[7];
+        if (frc == 8){
+            desabilitaBotaoCadastrar(false);
+            
+        }
+    }
+}
 
 
 // função que verifica se o campo "E-mail" foi preenchido
@@ -86,8 +163,8 @@ function semNome(){
     }else{
         document.getElementById("erroEmail").innerHTML="";
         validacao[3] = 1;
-        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5];
-        if (frc == 6){
+        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5] + validacao[6] + validacao[7];
+        if (frc == 8){
             desabilitaBotaoCadastrar(false);
         }
     }
@@ -103,8 +180,8 @@ function semNome(){
     }else{
         document.getElementById("erroSenha").innerHTML="";
         verifica();
-        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5];
-        if (frc == 6){
+        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5] + validacao[6] + validacao[7];
+        if (frc == 8){
             desabilitaBotaoCadastrar(false);
         }
     }
@@ -120,8 +197,8 @@ function semNome(){
     }else{
         document.getElementById("erroSenhaRepetida").innerHTML="";
         verifica();
-        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5];
-        if (frc == 6){
+        frc =  validacao[0] + validacao[1] + validacao[2] + validacao[3] + validacao[4] + validacao[5] + validacao[6] + validacao[7];
+        if (frc == 8){
             desabilitaBotaoCadastrar(false);
         }
     }

@@ -25,7 +25,12 @@
                 }
             }
             if ($Itens_Comprados[0] == 0 and $Itens_Comprados[1] == 0 and $Itens_Comprados[2] == 0){
-                echo '<p> Você não achou algo que lhe agrade? <br> Se trocar de ideia, visite a nossa <a href="../Paginas_PHP/index.php"><strong>página de produtos!</strong></a></p>';
+                if(isset($_GET['nome'])){
+                    $nomeUser = $_GET['nome'];
+                    echo '<p> Você não achou algo que lhe agrade? <br> Se trocar de ideia, visite a nossa <a href="../Paginas_PHP/index.php?nome='. $nomeUser .' "><strong>página de produtos!</strong></a></p>';
+                }else{
+                    echo '<p> Você não achou algo que lhe agrade? <br> Se trocar de ideia, visite a nossa <a href="../Paginas_PHP/index.php"><strong>página de produtos!</strong></a></p>';
+                }
             }
         }
 
@@ -59,14 +64,54 @@
             $valorBH = $BhQtd * $PRECOBH;
             $valorTotal += $valorBH;
         }
+
+        function voltar(){
+            if(isset($_GET['nome'])){
+                $nomeUser = $_GET['nome'];
+                $nomeUser = urldecode($nomeUser);
+                header("Location: index.php?nome=$nomeUser");
+            }else{
+                header("Location: index.php");
+            }
+        }
+        
+            if (isset($_POST['voltar'])){
+                voltar();
+            }
     ?>
 
-    <header id="itens">
-        <img src="../Imagens/Logotipo/logo_150x80.jpg" id="logotipo" onclick="princPag()" alt="">
+    <header >
+        <?php 
+            if(isset($_GET['nome'])){
+                $nomeUser = $_GET['nome'];
+                echo   '<a href="index.php?nome='. $nomeUser .'"><img src="../Imagens/Logotipo/logo_150x80.jpg" id="logotipo" alt=""></a>';
+            }else{
+                echo   '<a href="index.php"><img src="../Imagens/Logotipo/logo_150x80.jpg" id="logotipo" alt=""></a>';
+            }            
+        ?>
         <article >
             <h1>Finalizar Compra</h1>
         </article>
-        login
+        <nav id="entrar" onclick="logar()" >
+            <?php
+                if(isset($_GET['nome'])){
+                    $nomeUser = $_GET['nome'];
+                    $inicial = substr($nomeUser,0,1);
+                    echo <<< LOGADO
+                        <div id="UserLog">
+                            $inicial
+                        </div>
+                        LOGADO;
+                }else{    
+                    echo <<< LOGIN
+                        <p>Login</p>
+                        <img id="login" src="../Imagens/Icones/conecte-se.png" alt="Log in">
+                        </nav>
+                    LOGIN;
+                    
+                }
+            ?>
+        </nav>
     </header>
     <main>
         <article id="itens">
@@ -151,20 +196,22 @@
                     }
                 ?>
             </article>
-
         
+            <article>
+                    
+            </article>
+            
             <article>
                 <?php
                     if ($valorTotal >0){
                         echo <<<VOLTAR
-                            <strong><input type="button" value="Finalizar compra e voltar para a páginar principal" class="botao" onclick="princPag()" id="votarPrinc"></strong>
+                        <form method="post">
+                            <strong><input type="submit" value="Finalizar compra e voltar para a páginar principal" class="botao" name="voltar" id="votarPrinc"></strong>
+                        </form>
                         VOLTAR;
                         }
                 ?>
             </article>
-        
-        
-        
         </section>  
     
     </main>
@@ -234,4 +281,5 @@
 
     <script src="../JavaScript/pedidoScript.js"></script>
 </body>
+
 </html>

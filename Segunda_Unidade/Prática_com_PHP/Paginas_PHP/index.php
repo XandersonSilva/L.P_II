@@ -16,10 +16,25 @@
             <article>
                 <h1>Materiais esportivos</h1>
             </article>
-            <nav id="entrar" onclick="logar()">
-                <p>Login</p>
-                <img id="login" src="../Imagens/Icones/conecte-se.png" alt="Log in">
-            </nav>
+            <nav id="entrar" onclick="logar()" >
+                <?php
+                if(isset($_GET['nome'])){
+                    $nomeUser = $_GET['nome'];
+                    $inicial = substr($nomeUser,0,1);
+                    echo <<< LOGADO
+                        <div id="UserLog">
+                            $inicial
+                        </div>
+                        LOGADO;
+                }else{    
+                    echo <<< LOGIN
+                        <p>Login</p>
+                        <img id="login" src="../Imagens/Icones/conecte-se.png" alt="Log in">
+                        </nav>
+                    LOGIN;
+
+                }
+                ?>
         </header>
 
         <main>
@@ -29,8 +44,19 @@
             </article>
 
             <section id="conteudo">
-                    
-                <form action="pedido.php" method="post">
+                <?php
+                    if(isset($_GET['nome'])){
+                        $nomeUser = $_GET['nome'];
+                        echo <<< FORM
+                            <form action="pedido.php?nome=$nomeUser" method="post">
+                            FORM;
+                    }else{
+                        echo <<< FORM
+                            <form action="pedido.php" method="post">
+                        FORM;
+                    }
+
+                ?>    
                         
                     <article class="Item" id="Bola_d_volei">    
                         <div>

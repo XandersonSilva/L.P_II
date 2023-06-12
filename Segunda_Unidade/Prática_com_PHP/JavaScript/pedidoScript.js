@@ -10,6 +10,6 @@ function mostrar(){
     }
 }
 
-function princPag(){
-    window.location.href = "../Paginas_PHP/index.php";
+function  logar(){
+    window.location.href = "../Cadastro_Login/login.html";
 }

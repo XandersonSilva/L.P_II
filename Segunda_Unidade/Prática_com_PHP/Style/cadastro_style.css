@@ -14,11 +14,15 @@ body{
 }
 
 main{
+    display: flex;
+    align-items: center;
+}
+
+section{
     width: 320px;
     background-color: #ffffff;
     border: solid #2c0548 1px;
-    border-radius: 6px;
-    margin: 25px 0px 50px 0px;
+    border-radius: 10px;
 }
 
 .conteudo{
@@ -39,6 +43,12 @@ h1{
   font-size: 32px;
   margin-bottom: 2px;
   
+}
+
+aside > a{
+    padding: 0px 20px 3px 0px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 p{
@@ -67,29 +77,22 @@ span{
     background-color: #8f7df542;
 }
 
-#nascimento, #nome, #E-mail, #senhaIgual, #senha{
+#nascimento, input{
     height: 25px;
     width: 270px;
 }
 
 
+
 #botaoCadastrar{
-    background-color: #3824A8;
-    border-left-color: #8F7DF5;
-    border-top-color: #8F7DF5;
     border-radius: 5px;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 18px;
     width: 278px;
-    margin-top: 20px;
     height: 33px;
 }
 
-#botaoCadastrar:hover{
-    background-color: #271975;
-    color: #fff;
-}
 
 #Mt_log{
     display: flex;
@@ -107,8 +110,17 @@ footer{
 }
 
 
+.ativado{
+    background-color: #3824A8;
+    border-left-color: #8F7DF5;
+    border-top-color: #8F7DF5;
+}
+.ativado:hover{
+    background-color: #271975;
+    color: #fff;
+}   
 
-
-    
-    
+.desativado{
+    background-color: #5a5866;
+}
 
