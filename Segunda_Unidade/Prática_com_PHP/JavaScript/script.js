@@ -38,5 +38,5 @@ function Ant(){
 }
 
 function  logar(){
-    window.location.href = "../Cadastro_Login/login.html";
+    window.location.href = "../Cadastro_Login/login.php";
 }

@@ -21,7 +21,7 @@ main{
 section{
     width: 320px;
     background-color: #fff;
-    border: solid #2c0548 1px;
+    border: solid #7e73bd 2px;
     border-radius: 6px;
     
 }
@@ -51,12 +51,24 @@ label{
 
 a{
     color: #644bf1;
-      
+}
+
+.erro{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0px;
+    display: flex;
+    color: #ff0606;
+    justify-content: center;
+    padding: 0px;
 }
 
 #senha, #email{
     height: 25px;
     width: 270px;
+}
+
+#senha{
+    margin-bottom: 5px;
 }
 
 #E-campo, #S-campo{
@@ -72,7 +84,7 @@ a{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 18px;
     width: 278px;
-    margin-top: 20px;
+    margin-top: 10px;
     height: 33px;
 }
 #Cadastrar-se{

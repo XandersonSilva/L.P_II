@@ -7,8 +7,11 @@
     <title>Fazer login</title>
     <link rel="stylesheet" href="../Style/login_style.css">
     <link rel="shortcut icon" href="../Imagens/Favicon/conecte-se.png" type="image/png">
+    <script src="../JavaScript/jquery.js"></script>
+
 </head>
 <body>
+    
     <main class="conteudo">
         <section>
             <article id="L-form">
@@ -18,12 +21,17 @@
                     </article>
                     <article>
                         <label for="email">Email</label> 
-                        <input type="email" name="Email" id="email" placeholder="Email@exemplo.com" required size="30">
+                        <input type="email" name="Email" id="email" placeholder="Email@exemplo.com"  required size="30" onclick="ocutar()">
                     </article>
                     <br>
                     <article>
                         <label for="senha">Senha</label> 
-                        <input type="password" name="Senha" id="senha" placeholder="12345678" required >
+                        <input type="password" name="Senha" id="senha" placeholder="12345678" required onclick="ocutar()">
+                        <?php
+                        if (isset($_GET['erro'])){
+                            echo '<samp class="erro"> Usuário e ou senha inválidos </samp>';
+                            }
+                        ?>
                     </article>
                     <article>
                       <input type="submit" value="Entrar" id="enviar">
@@ -45,6 +53,10 @@
             Contato: <a href="https://github.com/xandersonsilva" target="_blank">GitHub </a> - <a href="https://www.instagram.com/x.s.s____/" target = "_blank">Instagram</a> 
         </small>
     </footer>
-    
+    <script>
+        function ocutar(){
+            $(".erro").hide();
+        }
+    </script>
 </body>
 </html>

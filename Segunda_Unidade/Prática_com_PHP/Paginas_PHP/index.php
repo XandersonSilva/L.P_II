@@ -68,7 +68,7 @@
                                 
                                 <div class="Entrada">    
                                     <label for="quant_Bv">Quantidade</label>
-                                    <input type="text" name="BvQtd" id="quant_Bv">
+                                    <input type="text" maxlength="10" name="BvQtd" id="quant_Bv">
                                 </div>
                             </aside>
                         <div>                            
@@ -87,7 +87,7 @@
                             
                             <div class="Entrada">
                                 <label for="quant_Bf">Quantidade</label>
-                                <input type="text" name="BfQtd" id="quant_Bf">
+                                <input type="text" maxlength="10" name="BfQtd" id="quant_Bf">
                             </div>
                         </aside>
 
@@ -108,7 +108,7 @@
                             
                             <div class="Entrada">
                                 <label for="quant_Bh">Quantidade</label>
-                                <input type="text" name="BhQtd" id="quant_Bh">                
+                                <input type="text" maxlength="10" name="BhQtd" id="quant_Bh">                
                             </div>
                         </aside>
 

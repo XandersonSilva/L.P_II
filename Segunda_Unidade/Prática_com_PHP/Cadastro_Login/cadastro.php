@@ -74,7 +74,7 @@
 
         </form>
         <aside>
-          <a href="login.html">Já tem uma conta?</a>
+          <a href="login.php">Já tem uma conta?</a>
         </aside>
       </section>
   </main>
