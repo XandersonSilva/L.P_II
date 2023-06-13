@@ -30,6 +30,10 @@ foreach ($pessoas as $pessoa) {
     if($pessoa['Senha'] == $senha and $pessoa['Email'] == $email) {
         $usuarioValid ++;
         $usserAtu = $pessoa['nome'];
+        $usserName     = $pessoa['nome']    ;
+        $usserEmail    = $pessoa['Email']   ;
+        $usserEndereco = $pessoa['Endereco'];
+        $usserCPF      = $pessoa['CPF']     ;
     }
 }
 
@@ -39,7 +43,11 @@ $usserAtu = urlencode($usserAtu);
 if ($usuarioValid == 0){
     header("Location: ../Cadastro_Login/login.php?erro=Nregistrado");
 }else{
-    header("Location: ../Paginas_PHP/index.php?nome=" . $usserAtu ."");
+    header("Location: ../Paginas_PHP/index.php");
+    setcookie("userA_Nome"    , $usserName     ,0, '/');
+    setcookie("userA_Email"   , $usserEmail    ,0, '/');    
+    setcookie("userA_Endereco", $usserEndereco ,0, '/');
+    setcookie("userA_CPF"     , $usserCPF ,0, '/');
 }
 
 

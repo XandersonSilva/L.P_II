@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 table {
     border-collapse: collapse;
     min-width: 400px;
@@ -46,6 +48,7 @@ table tr:nth-child(odd) {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     position: fixed;
+    width: 410px;
     bottom: 0px;
     right: 0px;
     padding: 7px;
@@ -54,7 +57,7 @@ table tr:nth-child(odd) {
     align-items: flex-end;
 }
 
-#prec_indv{
+#prec_indv, #DadosVenda{
     display: none;
 }
 #btnMostra{
@@ -87,4 +90,13 @@ main{
     border-radius: 10px;
     padding-top: 10px;
     margin-top: 20px;
+}
+
+#conteudo{
+    padding-top: 20px;
+}
+
+#TabDados{
+    font-size: 16px;
+    max-width: 4px;
 }

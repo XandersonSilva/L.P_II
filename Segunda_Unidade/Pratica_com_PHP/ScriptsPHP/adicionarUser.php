@@ -2,6 +2,7 @@
     $usuarioValid = false;
 
     $nome = $_GET['nome'];
+    $nome = ucwords($nome);
     $email = $_GET['email'];
     $endereco = $_GET['endereco'];
     $cpf = $_GET['CPF'];

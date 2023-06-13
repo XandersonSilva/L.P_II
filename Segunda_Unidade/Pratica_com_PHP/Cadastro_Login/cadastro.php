@@ -47,7 +47,7 @@
 
           <p>
             <label for="CPF">CPF</label>
-            <input type="number" name="CPF" id="cpf" minlength="9" maxlength="9" onblur="validaC()">
+            <input type="number" name="CPF" id="cpf" placeholder="00000000000" onkeyup="validaC()" onblur="validaC()" required>
             <span id="erroCPF" class="erro"></span>
           </p>
 

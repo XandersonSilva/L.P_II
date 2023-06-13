@@ -1,5 +1,6 @@
 function mostrar(){
     $("#prec_indv").toggle();
+    $("#DadosVenda").toggle();
     var contem = $("#btnMostra").val();
     //alert(contem);
     if (contem == "Mostrar"){
@@ -11,5 +12,5 @@ function mostrar(){
 }
 
 function  logar(){
-    window.location.href = "../Cadastro_Login/login.html";
+    window.location.href = "../Cadastro_Login/login.php";
 }

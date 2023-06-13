@@ -10,6 +10,11 @@
     <link rel="shortcut icon" href="../Imagens/Favicon/logo.jpg" type="image/jpeg">
     <title>Comfirmação</title>
 </head>
+<style>
+
+    
+
+</style>
 <body>
 
     <?php
@@ -25,12 +30,8 @@
                 }
             }
             if ($Itens_Comprados[0] == 0 and $Itens_Comprados[1] == 0 and $Itens_Comprados[2] == 0){
-                if(isset($_GET['nome'])){
-                    $nomeUser = $_GET['nome'];
-                    echo '<p> Você não achou algo que lhe agrade? <br> Se trocar de ideia, visite a nossa <a href="../Paginas_PHP/index.php?nome='. $nomeUser .' "><strong>página de produtos!</strong></a></p>';
-                }else{
-                    echo '<p> Você não achou algo que lhe agrade? <br> Se trocar de ideia, visite a nossa <a href="../Paginas_PHP/index.php"><strong>página de produtos!</strong></a></p>';
-                }
+                echo '<p> Você não achou algo que lhe agrade? <br> Se mudar de ideia, visite a nossa <a href="../Paginas_PHP/index.php"><strong>página de produtos!</strong></a></p>';
+                
             }
         }
 
@@ -66,37 +67,23 @@
         }
 
         function voltar(){
-            if(isset($_GET['nome'])){
-                $nomeUser = $_GET['nome'];
-                $nomeUser = urldecode($nomeUser);
-                header("Location: index.php?nome=$nomeUser");
-            }else{
                 header("Location: index.php");
-            }
         }
-        
-            if (isset($_POST['voltar'])){
-                voltar();
-            }
+        if (isset($_POST['voltar'])){
+            voltar();
+        }
     ?>
 
     <header >
-        <?php 
-            if(isset($_GET['nome'])){
-                $nomeUser = $_GET['nome'];
-                echo   '<a href="index.php?nome='. $nomeUser .'"><img src="../Imagens/Logotipo/logo_150x80.jpg" id="logotipo" alt=""></a>';
-            }else{
-                echo   '<a href="index.php"><img src="../Imagens/Logotipo/logo_150x80.jpg" id="logotipo" alt=""></a>';
-            }            
-        ?>
+        <a href="index.php"><img src="../Imagens/Logotipo/logo_150x80.jpg" id="logotipo" alt=""></a>
         <article >
             <h1>Finalizar Compra</h1>
         </article>
         <nav id="entrar" onclick="logar()" >
             <?php
-                if(isset($_GET['nome'])){
-                    $nomeUser = $_GET['nome'];
-                    $inicial = substr($nomeUser,0,1);
+                if(isset($_COOKIE['userA_Nome'])){
+                    $nomeUser = $_COOKIE['userA_Nome'];
+                    $inicial = strtoupper(substr($nomeUser,0,1));
                     echo <<< LOGADO
                         <div id="UserLog">
                             $inicial
@@ -106,7 +93,6 @@
                     echo <<< LOGIN
                         <p>Login</p>
                         <img id="login" src="../Imagens/Icones/conecte-se.png" alt="Log in">
-                        </nav>
                     LOGIN;
                     
                 }
@@ -120,18 +106,23 @@
                         echo "Seu pedido foi processado com sucesso!";
                     }
                     else{
-                        echo "Pedido Finalizado";
+                        if (isset($_COOKIE['userA_Nome'])){
+                            $nomeUser = $_COOKIE['userA_Nome'];
+                            $primN = explode(" ", $nomeUser);
+                            echo "Olá ". $primN[0] . "!";
+                        }
                     }
 
                     ?>
                 <hr id="L_ttl">
         </article>
+                
         <section id="conteudo">
             <?php
                 verifica_vazio($BvQtd ,$BfQtd ,$BhQtd);
             ?>
-             
-                
+            
+            
             <article> <!-- Tabela com dados dos produtos da compra --> 
                 <?php
                     if ($valorTotal >=1){
@@ -196,11 +187,7 @@
                     }
                 ?>
             </article>
-        
-            <article>
                     
-            </article>
-            
             <article>
                 <?php
                     if ($valorTotal >0){
@@ -212,8 +199,9 @@
                         }
                 ?>
             </article>
+
         </section>  
-    
+
     </main>
     
     <article id="prec_indv_ttl">
@@ -221,12 +209,94 @@
             if ($valorTotal >=1){
                 echo <<<TITULO
                 <aside>
-                    Mostrar preço por unidade 
+                    Mais informações sobre a sua compra
                     <input id="btnMostra" type="button" class="botao" value="Mostrar" onclick="mostrar()" >
                 </aside>
                 TITULO;
             }
         ?>
+        <?php 
+            if ($valorTotal >=1 and isset($_COOKIE['userA_Nome'])){
+
+                $userNome = $_COOKIE['userA_Nome'];
+                $userEmail = $_COOKIE['userA_Email'];
+                $userEnderco = $_COOKIE['userA_Endereco'];
+                $userCPF = $_COOKIE['userA_CPF'];
+                $userCPF =  substr($userCPF,0,3) . '.' . substr($userCPF,3,3) . '.' . substr($userCPF,6,3) . '-' . substr($userCPF,9,2)  ; 
+
+                echo <<< DADOSVENDA
+                        <aside id="DadosVenda">
+                        <table id="TabDados">
+                            <tr>
+                                <td>
+                                    Empresa
+                                </td>
+                                <td>
+                                    Elefante Esportes
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    E-mail
+                                </td>
+                                <td>
+                                    elefanteesportes@elesport.com <!--Email ficticio-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Forma de pagamento
+                                </td>
+                                <td>
+                                    A combinar com fornecedor
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    CNPJ
+                                </td>
+                                <td>
+                                    96.727.038/0001-30
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Cliente
+                                </td>
+                                <td>
+                                    $userNome
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    CPF
+                                </td>
+                                <td>
+                                    $userCPF
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    E-mail
+                                </td>
+                                <td>
+                                    $userEmail
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Endereço da entrega
+                                </td>
+                                <td>
+                                    $userEnderco
+                                </td>
+                            </tr>
+                        </table>
+                </aside>
+                DADOSVENDA;
+            }
+        ?>
+
         <aside id="prec_indv"> <!-- Tabela com dados dos produtos -->    
             <?php
                 if ($valorTotal >=1){

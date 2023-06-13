@@ -18,9 +18,9 @@
             </article>
             <nav id="entrar" onclick="logar()" >
                 <?php
-                if(isset($_GET['nome'])){
-                    $nomeUser = $_GET['nome'];
-                    $inicial = substr($nomeUser,0,1);
+                if(isset($_COOKIE['userA_Nome'])){
+                    $nomeUser = $_COOKIE['userA_Nome'];
+                    $inicial = strtoupper(substr($nomeUser,0,1));
                     echo <<< LOGADO
                         <div id="UserLog">
                             $inicial
@@ -45,19 +45,10 @@
 
             <section id="conteudo">
                 <?php
-                    if(isset($_GET['nome'])){
-                        $nomeUser = $_GET['nome'];
-                        echo <<< FORM
-                            <form action="pedido.php?nome=$nomeUser" method="post">
-                            FORM;
-                    }else{
-                        echo <<< FORM
-                            <form action="pedido.php" method="post">
-                        FORM;
-                    }
-
-                ?>    
-                        
+                    echo <<< FORM
+                        <form action="pedido.php" method="post">
+                    FORM;
+                ?>
                     <article class="Item" id="Bola_d_volei">    
                         <div>
                             <input class="botao_Nav" type="button" value="<" onclick="Ant()">

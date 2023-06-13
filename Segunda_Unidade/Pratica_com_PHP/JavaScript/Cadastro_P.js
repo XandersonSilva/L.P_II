@@ -27,7 +27,7 @@ function validaC() {
     var cpf = document.getElementById("cpf").value;
     var cpfValido = 0;
 
-    cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+    cpf = cpf.replace(/\D/g, '');
 
     if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
         cpfValido = -1;
@@ -77,7 +77,7 @@ function validaC() {
             
         }
     }else{
-        document.getElementById("erroCPF").innerHTML="Para prosseguir informe um CPF válido";
+        document.getElementById("erroCPF").innerHTML="Para prosseguir informe um CPF válido! Não informe pontos ou traços";
     }
 }
 
