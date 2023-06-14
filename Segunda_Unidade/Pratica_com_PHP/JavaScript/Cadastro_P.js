@@ -208,5 +208,5 @@ function semEndereco(){
 
 // redireciona o usuário para a página de login
 function avancar(){
-    window.location.href = "login.html";
+    window.location.href = "login.php";
 }
