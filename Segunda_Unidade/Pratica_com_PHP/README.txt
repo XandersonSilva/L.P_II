@@ -5,7 +5,7 @@ Importante:
  com  linux então não sei como  vai se comportar no windows.
 
     A versão mais atualizada desse código esta disponível no 
- github: https://github.com/XandersonSilva/L.P_II/tree/master/Segunda_Unidade/Pr%C3%A1tica_com_PHP
+ github: https://github.com/XandersonSilva/L.P_II/tree/master/Segunda_Unidade/Pratica_com_PHP
 
 
 Link de Imagens de terceiros:
